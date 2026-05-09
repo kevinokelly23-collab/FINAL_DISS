@@ -1,0 +1,14 @@
+Forecasting Disease Burden and Evaluating Pharmaceutical Supply Responsiveness in Sub-Saharan Africa
+Kevin O'Kelly — C22520606
+BSc in Business Analytics, Technological University Dublin
+Supervisor: Dr. Ayman Tobail
+
+This project investigates whether pharmaceutical supply in Sub-Saharan Africa responds efficiently to changes in disease burden across HIV, tuberculosis, and malaria. Using data covering 15 countries from 2000 to 2023, the analysis combines time-series forecasting, panel econometric modelling, and scenario simulation to assess the relationship between epidemiological need and pharmaceutical supply. The 15 study countries are Cameroon, Côte d'Ivoire, Ethiopia, Ghana, Kenya, Malawi, Mozambique, Nigeria, Rwanda, Senegal, South Africa, Tanzania, Uganda, Zambia, and Zimbabwe.
+
+Data Sources
+The analysis draws on four datasets. Disease burden data for HIV, malaria, and tuberculosis come from the WHO Global Health Observatory. Pharmaceutical import values are sourced from UN Comtrade using HS codes 3003 and 3004. Socioeconomic control variables including population, population density, health expenditure per capita, and secondary school enrolment come from the World Bank Open Data portal. A supplementary dataset from the Global Fund's Price and Quality Reporting system provides disease-specific procurement data used for robustness analysis.
+
+Notebook Contents
+The notebook is divided into nine sections. The first three sections handle data cleaning, covering the WHO disease datasets, the World Bank external variables, and the UN Comtrade pharmaceutical import files respectively. Each section standardises country names, filters to the study countries and years, handles missing values, and structures the data into a consistent country-year format. A fourth section cleans the Global Fund PQR dataset, calculating annual supply units by disease for each country. A fifth section merges all cleaned datasets into the master panel used throughout the analysis.
+
+The sixth section is exploratory data analysis, examining time trends, cross-country variation, correlations, and distributions across the main variables. The seventh section implements the forecasting stage, evaluating naive, linear trend, exponential smoothing, ARIMA, and log-ARIMA models for each country-disease combination using expanding-window cross-validation, selecting the best model by MAE and RMSE, and generating projections for 2024 to 2030. The eighth section contains the econometric analysis, progressing from pooled OLS through country and two-way fixed effects models, with additional lag analysis, bootstrap inference, structural break testing, country-level regressions, and PQR robustness checks. The ninth and final section builds forward-looking scenarios combining the disease forecasts with the estimated supply behaviour to assess future supply adequacy under alternative demand and funding conditions.
